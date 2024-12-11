@@ -6,7 +6,7 @@ const fetchDynamicData = async (tableName, fromDate, toDate) => {
     const query = `
       SELECT input_json 
       FROM ${tableName} 
-      WHERE DATE(created_on) BETWEEN '${fromDate}' AND '${toDate}';
+      WHERE DATE(created_on) BETWEEN '${fromDate}' AND '${toDate}' ;
     `;
     const result = await usermgmt.query(query);
 
