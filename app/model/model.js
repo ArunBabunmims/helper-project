@@ -1,4 +1,4 @@
-const { usermgmt } = require('../config/dbConfig');
+const { sapMasterInc } = require('../config/dbConfig');
 const mysql = require('mysql2/promise');
 
 const fetchDynamicData = async (tableName, fromDate, toDate) => {
@@ -8,7 +8,7 @@ const fetchDynamicData = async (tableName, fromDate, toDate) => {
       FROM ${tableName} 
       WHERE DATE(created_on) BETWEEN '${fromDate}' AND '${toDate}' ;
     `;
-    const result = await usermgmt.query(query);
+    const result = await sapMasterInc.query(query);
 
     console.log(`Model Data from ${tableName}:`, result);
       

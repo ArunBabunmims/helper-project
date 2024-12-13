@@ -1,6 +1,6 @@
 const express = require('express');
 const { transferDynamicData } = require('../controller/controller');
-
+const {readExcelFile} = require('../controller/attendenceController.js')
 const router = express.Router();
 
 // Route to transfer subject data
@@ -13,5 +13,9 @@ router.get('/get-student-event-data', (req, res) => transferDynamicData(req, res
 router.get('/get-vendor-data', (req, res) => transferDynamicData(req, res, 'vendor'));
 router.get('/get-organization-data', (req, res) => transferDynamicData(req, res, 'organization'));  
 router.get('/get-campus-data', (req, res) => transferDynamicData(req, res, 'campus'));
+
+
+
+router.post('/get-Attendence-excel', readExcelFile);
 
 module.exports = router;
