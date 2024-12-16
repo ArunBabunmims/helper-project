@@ -1,5 +1,6 @@
 const { sapMasterInc } = require('../config/dbConfig');
 const mysql = require('mysql2/promise');
+const { countInLMS } = require('./attendenceModel');
 
 const fetchDynamicData = async (tableName, fromDate, toDate) => {
   try {
@@ -23,3 +24,6 @@ const fetchDynamicData = async (tableName, fromDate, toDate) => {
 module.exports = {
   fetchDynamicData,
 };
+
+
+

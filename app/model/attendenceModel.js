@@ -12,7 +12,7 @@ const countInLMS = async (courseId, username, date) => {
       INNER JOIN course cc ON sca.courseId = cc.id
       INNER JOIN users uu ON uu.username = sca.facultyId
       INNER JOIN program_campus pc ON pc.campusId = cc.campusId
-      WHERE sca.courseId = ? AND sca.facultyId = ? AND DATE(sca.createdDate) > ?
+      WHERE sca.courseId = ? AND sca.facultyId = ? AND DATE(sca.createdDate) > '2024-08-24'
       GROUP BY cc.moduleName, pc.campusName, uu.firstname, uu.lastname;
     `;
     

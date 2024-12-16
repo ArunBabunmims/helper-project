@@ -13,8 +13,10 @@ async function readExcelFile(req, res, next) {
         
         const jsonData = xlsx.utils.sheet_to_json(worksheet);
         const resultsArray = [];
+console.log('jsonDataXXX',jsonData);
 
         for (const row of jsonData) {
+            
             const eventId = row.eventId;
             const programId = row.programId;
             const facultyId = row.facultyId;
